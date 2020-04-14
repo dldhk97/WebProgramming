@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>꾸빵 회원가입</title>
+
+    <style>
+        div{
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>회원가입</h1>
+    <div>
+        <form>
+            <fieldset>
+                <legend>로그인 정보</legend>
+                <div>
+                    <label>아이디</label>
+                    <input type="text" id="user-id" required="required">
+                </div>
+
+                <div>
+                    <label>비밀번호</label>
+                    <input type="password" id="user-pw" required="required">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>개인정보</legend>
+                <div>
+                    <label>이름</label>
+                    <input type="text" id="user-name">
+                </div>
+
+                <div>
+                    <label>성별</label>
+                    <input type="radio" name="gender" id="male" value="male"><label for="male">남</label>
+                    <input type="radio" name="gender" id="female" value="female"><label for="female">여</label>
+                </div>
+
+                <div>
+                    <label>주소</label>
+                    <select id="address"">
+                        <optgroup label="선산읍"></optgroup>
+                            <option value="perfect-li">완전리</option>
+                            <option value="east-li">동부리</option>
+                            <option value="theroad-li">노상리</option>
+                        </optgroup>
+                        <optgroup label="고아읍"></optgroup>
+                            <option value="attent-li">관심리</option>
+                            <option value="unusual-li">이례리</option>
+                            <option value="fiveroad-li">오로리</option>
+                        </optgroup>
+                    </select>
+                </div>
+            
+                <div>
+                    <label>메일주소</label>
+                    <input type="email" id="user-email">
+                </div>
+
+                <div>
+                    <label>전화번호</label>
+                    <input type="tel" id="user-email">
+                </div>
+
+                <fieldset>
+                    <legend>관심분야</legend>
+                    <input type="checkbox" name="favorites" id="kitchen" value="kitchen"><label for="kitchen">주방제품</label>
+                    <input type="checkbox" name="favorites" id="electronics"" value="electronics"><label for="electronics">가전제품</label>
+                    <input type="checkbox" name="favorites" id="fashion" value="fashion"><label for="fashion">패션</label>
+                    <br>
+                    <input type="checkbox" name="favorites" id="child"" value="child"><label for="child">유아제품</label>
+                    <input type="checkbox" name="favorites" id="sports""" value="sports"><label for="sports">스포츠용품</label>
+                    <input type="checkbox" name="favorites" id="books" value="books"><label for="books">도서</label>
+                    
+                </fieldset>
+            </fieldset>
+
+        <input type="submit" id="submit" value="회원가입">
+        <input type="reset"" id="reset" value="입력취소">
+        </form>
+    </div>
+
+</body>
