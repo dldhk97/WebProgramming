@@ -6,6 +6,13 @@
     <title>컴퓨터소프트웨어공학과 | 학과소개 | 학과소개</title>
 
     <style>
+        .wrapper{
+            position: relative;
+            padding-top: 0;
+            font-size: 0;
+            max-width: 1100px;
+            box-sizing: border-box;
+        }
         .header{
             position: absolute;
             top: 0;
@@ -19,25 +26,37 @@
             height: 2.375rem;
         }
         .container{
-            max-width: 1240px;
+            max-width: 1000px;
             width: 100%;
             margin-left: auto;
             margin-right: auto;
             position: static;
             display: block;
+            padding-right: 20px;
+            padding-left: 20px;
         }
         .header-util{
             padding-top: 1rem;
         }
 
         .sub-visual-wrapper{
-            position: absolute;
+            position: relative;
             top: 0;
             left: 50%;
             margin-left: -960px;
             display: block;
-            width: 1920px;
-            height: 370px;
+            /* width: 1920px; */
+            /* height: 370px; */
+        }
+
+        .sub-visual-wrapper > img{
+            position: static;
+            top: 0;
+            left: 0;
+            max-width: 1100px;
+            margin-left: 410px;
+            height: auto;
+            overflow: hidden;
         }
 
 
@@ -104,6 +123,7 @@
         }
         .navbar-brand > a > strong:before{
             color: white;
+            font-size: 12px;
             margin-right: 1rem;
             content: "|";
         }
@@ -112,7 +132,7 @@
             display: inline-block;
             border-bottom: 0;
             position: relative;
-            top: 1.5rem;
+            top: 2.2rem;
         }
 
         .navbar-nav ul{
@@ -129,18 +149,19 @@
 
         .navbar-nav li a{
             color:white;
+            font-size: 13px;
             font-weight: bold;
             display:block;
             line-height:37px;
             margin:0px;
-            width:100px;
+            width:85px;
             text-align:center;
             text-decoration:none;
             height:37px;
         }
 
         .navbar-nav li a:hover{
-            background:url(img/menu_o.png);
+            /* background:url(img/menu_o.png); */
             background-repeat:no-repeat;
             color:yellow;
         }
@@ -172,7 +193,7 @@
         }
         .navbar-nav li:hover li a:hover{
             background:none;
-            color:dimgrey;
+            color:red;
         }
         
 
@@ -182,147 +203,224 @@
             text-align: center;
         }
 
-        .navbar-nav > ul{
+        /* .navbar-nav > ul{
             border:1px solid black;
+        } */
+
+        .sub-top{
+            position: relative;
+            border-top: 0;
+        }
+
+        .contents-paging-navigation-wrapper{
+            display: block;
+            background-color: #575d6d;
+            height: 3.75rem;
+        }
+
+        .contents-paging-navigation{
+            display: block;
+            height: 3.75rem;
+        }
+
+        .contents-paging-navigation > span{
+            font-size: 16px;
+        }
+
+        .icon-home{
+            display: inline-block;
+            vertical-align: middle;
+            width: 3.75rem;
+            height: 3.75rem;
+            margin-right: 1.875rem;
+            background-color: #3e4452;
+            background-size: 20px 17px;
+            text-indent: -5000rem;
+            font-size: 0;
+        }
+        
+        .location{
+            display:inline-block;
+            vertical-align: middle;
+            height: 3.75rem;
+            line-height: 3.75rem;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .icon-gt{
+            display:inline-block;
+            vertical-align: middle;
+            height: 3.75rem;
+            line-height: 3.75rem;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+
+        .location2{
+            display:inline-block;
+            vertical-align: middle;
+            height: 3.75rem;
+            line-height: 3.75rem;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .contents-paging-navigation > strong{
+            font-size: 16px;
         }
         
     </style>
 </head>
 
-<body>
-    <div class="header">
-        <div class="gnb">
-            <div class="container">
-                <div class="header-util">
-                    <ul class="float-right">
-                        <li><a href="http://cs.kumoh.ac.kr/cs/index.do">홈</a></li>
-                        <li><a href="http://cs.kumoh.ac.kr/_common/login/login.do">로그인</a></li>
-                        <li><a href="http://www.kumoh.ac.kr/ko/index.do">대학메인</a></li>
-                        <li><a href="http://iphak.kumoh.ac.kr/ipsi/index.do">입학안내</a></li>
-                    </ul>
+<body leftmargin="0" rightmargin="0" topmargin="0" bottommargin="0">
+    <div class="wrapper">
+        <div class="header">
+            <div class="gnb">
+                <div class="container">
+                    <div class="header-util">
+                        <ul class="float-right">
+                            <li><a href="http://cs.kumoh.ac.kr/cs/index.do">홈</a></li>
+                            <li><a href="http://cs.kumoh.ac.kr/_common/login/login.do">로그인</a></li>
+                            <li><a href="http://www.kumoh.ac.kr/ko/index.do">대학메인</a></li>
+                            <li><a href="http://iphak.kumoh.ac.kr/ipsi/index.do">입학안내</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar">
+                <div class="container">
+                    <h1 class="navbar-brand">
+                        <a href="http://cs.kumoh.ac.kr/cs/index.do">
+                            <img src="source/logo.png" alt="kit금오공과대학교 (Kumoh National Institute of Technology)" width="170px" height="auto" align="left" >
+                            <strong>컴퓨터소프트웨어공학과</strong>
+                        </a>
+                    </h1>
+    
+                    <div id="top-menu">
+                        <ul class="navbar-nav">
+                            <li>
+                                <a href="http://cs.kumoh.ac.kr/cs/sub0101.do" title="학과소개" class="active">학과소개</a>
+                                <div class="depth2" >
+                                    <ul>
+                                        <li>
+                                            <a href="http://cs.kumoh.ac.kr/cs/sub0101.do" title="학과소개" class="active">학과소개</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://cs.kumoh.ac.kr/cs/sub0102.do" title="교육목표" class="active">교육목표</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://cs.kumoh.ac.kr/cs/sub0103.do" title="주요성과" class="active">주요성과</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://cs.kumoh.ac.kr/cs/sub0104.do" title="졸업 후 진로" class="active">졸업 후 진로</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+    
+                            <li>
+                                <a href="http://cs.kumoh.ac.kr/cs/sub0201.do" title="공학교육인증" class="active">공학교육인증</a>
+                                <div class="depth2" >
+                                    <ul>
+                                        <li>
+                                            <a href="http://cs.kumoh.ac.kr/cs/sub0201.do" title="공학교육인증제도 소개" class="active">공학교육인증제도 소개</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://cs.kumoh.ac.kr/cs/sub0202.do" title="프로그램 교육목표" class="active">프로그램 교육목표</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://cs.kumoh.ac.kr/cs/sub0203.do" title="프로그램 학습성과" class="active">프로그램 학습성과</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://cs.kumoh.ac.kr/cs/sub0204.do" title="교과과정" class="active">교과과정</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://cs.kumoh.ac.kr/cs/sub0205.do" title="인증졸업기준" class="active">인증졸업기준</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+    
+                            <li>
+                                <a href="http://cs.kumoh.ac.kr/cs/sub0301.do" title="대학원" class="active">대학원</a>
+                                <div class="depth2" >
+                                    <ul>
+                                        <li>
+                                            <a href="http://cs.kumoh.ac.kr/cs/sub0301.do" title="일반대학원(소프트웨어공학과)" class="active">일반대학원(소프트웨어공학과)</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://cs.kumoh.ac.kr/cs/sub0302.do" title="산업대학원(컴퓨터IT공학과)" class="active">산업대학원(컴퓨터IT공학과)</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+    
+                            <li>
+                                <a href="http://cs.kumoh.ac.kr/cs/sub0401.do" title="구성원" class="active">구성원</a>
+                                <div class="depth2" >
+                                    <ul>
+                                        <li>
+                                            <a href="http://cs.kumoh.ac.kr/cs/sub0401.do" title="교수" class="active">교수</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://cs.kumoh.ac.kr/cs/sub0402.do" title="조교" class="active">조교</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+    
+                            
+                            <li>
+                                <a href="http://cs.kumoh.ac.kr/cs/sub0503.do" title="학생활동" class="active">학생활동</a>
+                                <div class="depth2" >
+                                    <ul>
+                                        <li>
+                                            <a href="http://cs.kumoh.ac.kr/cs/sub0503.do" title="학생회" class="active">학생회</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://cs.kumoh.ac.kr/cs/sub0504.do" title="동아리" class="active">동아리</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+    
+                            <li>
+                                <a href="http://cs.kumoh.ac.kr/cs/sub0601.do" title="커뮤니티" class="active">커뮤니티</a>
+                                <div class="depth2" >
+                                    <ul>
+                                        <li>
+                                            <a href="http://cs.kumoh.ac.kr/cs/sub0601.do" title="포토갤러리" class="active">포토갤러리</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://cs.kumoh.ac.kr/cs/sub0602.do" title="수상실적" class="active">수상실적</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                          
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-        
-        <div class="navbar">
-            <div class="container">
-                <h1 class="navbar-brand">
-                    <a href="http://cs.kumoh.ac.kr/cs/index.do">
-                        <img src="source/logo.png" alt="kit금오공과대학교 (Kumoh National Institute of Technology)" width="170px" height="auto" align="left" >
-                        <strong>컴퓨터소프트웨어공학과</strong>
-                    </a>
-                </h1>
-
-                <div id="top-menu">
-                    <ul class="navbar-nav">
-                        <li>
-                            <a href="http://cs.kumoh.ac.kr/cs/sub0101.do" title="학과소개" class="active">학과소개</a>
-                            <div class="depth2" >
-                                <ul>
-                                    <li>
-                                        <a href="http://cs.kumoh.ac.kr/cs/sub0101.do" title="학과소개" class="active">학과소개</a>
-                                    </li>
-                                    <li>
-                                        <a href="http://cs.kumoh.ac.kr/cs/sub0102.do" title="교육목표" class="active">교육목표</a>
-                                    </li>
-                                    <li>
-                                        <a href="http://cs.kumoh.ac.kr/cs/sub0103.do" title="주요성과" class="active">주요성과</a>
-                                    </li>
-                                    <li>
-                                        <a href="http://cs.kumoh.ac.kr/cs/sub0104.do" title="졸업 후 진로" class="active">졸업 후 진로</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li>
-                            <a href="http://cs.kumoh.ac.kr/cs/sub0201.do" title="공학교육인증" class="active">공학교육인증</a>
-                            <div class="depth2" >
-                                <ul>
-                                    <li>
-                                        <a href="http://cs.kumoh.ac.kr/cs/sub0201.do" title="공학교육인증제도 소개" class="active">공학교육인증제도 소개</a>
-                                    </li>
-                                    <li>
-                                        <a href="http://cs.kumoh.ac.kr/cs/sub0202.do" title="프로그램 교육목표" class="active">프로그램 교육목표</a>
-                                    </li>
-                                    <li>
-                                        <a href="http://cs.kumoh.ac.kr/cs/sub0203.do" title="프로그램 학습성과" class="active">프로그램 학습성과</a>
-                                    </li>
-                                    <li>
-                                        <a href="http://cs.kumoh.ac.kr/cs/sub0204.do" title="교과과정" class="active">교과과정</a>
-                                    </li>
-                                    <li>
-                                        <a href="http://cs.kumoh.ac.kr/cs/sub0205.do" title="인증졸업기준" class="active">인증졸업기준</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li>
-                            <a href="http://cs.kumoh.ac.kr/cs/sub0301.do" title="대학원" class="active">대학원</a>
-                            <div class="depth2" >
-                                <ul>
-                                    <li>
-                                        <a href="http://cs.kumoh.ac.kr/cs/sub0301.do" title="일반대학원(소프트웨어공학과)" class="active">일반대학원(소프트웨어공학과)</a>
-                                    </li>
-                                    <li>
-                                        <a href="http://cs.kumoh.ac.kr/cs/sub0302.do" title="산업대학원(컴퓨터IT공학과)" class="active">산업대학원(컴퓨터IT공학과)</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li>
-                            <a href="http://cs.kumoh.ac.kr/cs/sub0401.do" title="구성원" class="active">구성원</a>
-                            <div class="depth2" >
-                                <ul>
-                                    <li>
-                                        <a href="http://cs.kumoh.ac.kr/cs/sub0401.do" title="교수" class="active">교수</a>
-                                    </li>
-                                    <li>
-                                        <a href="http://cs.kumoh.ac.kr/cs/sub0402.do" title="조교" class="active">조교</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        
-                        <li>
-                            <a href="http://cs.kumoh.ac.kr/cs/sub0503.do" title="학생활동" class="active">학생활동</a>
-                            <div class="depth2" >
-                                <ul>
-                                    <li>
-                                        <a href="http://cs.kumoh.ac.kr/cs/sub0503.do" title="학생회" class="active">학생회</a>
-                                    </li>
-                                    <li>
-                                        <a href="http://cs.kumoh.ac.kr/cs/sub0504.do" title="동아리" class="active">동아리</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li>
-                            <a href="http://cs.kumoh.ac.kr/cs/sub0601.do" title="커뮤니티" class="active">커뮤니티</a>
-                            <div class="depth2" >
-                                <ul>
-                                    <li>
-                                        <a href="http://cs.kumoh.ac.kr/cs/sub0601.do" title="포토갤러리" class="active">포토갤러리</a>
-                                    </li>
-                                    <li>
-                                        <a href="http://cs.kumoh.ac.kr/cs/sub0602.do" title="수상실적" class="active">수상실적</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                      
-                    </ul>
-                </div>
+        <div class="sub-top">
+            <div class="sub-visual-wrapper">
+                <img alt="학과소개" src="source/top.jpg">
             </div>
         </div>
-    </div>
-    <div class="sub-top">
-        <div class="sub-visual-wrapper">
-            <img alt="학과소개" src="source/top.jpg">
+        <div class="contents-paging-navigation-wrapper">
+            <p class="contents-paging-navigation container">
+                <span class="icon-home">HOME</span>
+                <span class="location">학과소개</span>
+                <span class="icon-gt">></span>
+                <strong class="location2">학과소개</strong>
+            </p>
         </div>
     </div>
+    
 </body>
