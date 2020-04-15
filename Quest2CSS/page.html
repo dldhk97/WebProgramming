@@ -23,9 +23,11 @@
             width: 100%;
             margin-left: auto;
             margin-right: auto;
+            position: static;
+            display: block;
         }
         .header-util{
-            padding-top: 0.875rem;
+            padding-top: 1rem;
         }
 
         .sub-visual-wrapper{
@@ -71,7 +73,7 @@
         }
 
         .navbar{
-            position: absolute;
+            /* position: absolute; */
             top: 2.375rem;
             left: 0;
             padding: 0;
@@ -102,8 +104,68 @@
         }
         .navbar-brand > a > strong:before{
             color: white;
-            margin-right: 10px;
+            margin-right: 1rem;
             content: "|";
+        }
+
+        .navbar-nav{
+            display: inline-block;
+            border-bottom: 0;
+            position: relative;
+            top: 1.5rem;
+        }
+        .navbar-nav a{
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar-nav ul{
+            margin: 0;
+            padding: 0;
+            float: left;
+            list-style: none;
+        }
+
+        .navbar-nav li{
+            margin: 0;
+            padding: 0;
+            border: 0;
+            margin-left: 2rem;
+            float: left;
+            list-style: none;
+        }
+
+        /* 디버깅용 */
+        .navbar-nav > li:hover{
+            background-color: #31b9a7;
+        }
+        
+        .navbar-nav > li:hover > a{
+            color: yellow;
+        }
+
+        .navbar-nav > li:hover > div a:hover {
+            color: dimgrey;
+        }
+
+
+        .navbar-nav > li > div{
+            display: none;
+        }
+
+        .navbar-nav > li:hover > div {
+            display: block;
+        }
+
+        .top-menu{
+            float: left;
+            margin-left: 6.56rem;
+            text-align: center;
+        }
+
+        .navbar-nav > ul{
+            border:1px solid black;
         }
         
     </style>
@@ -132,6 +194,177 @@
                         <strong>컴퓨터소프트웨어공학과</strong>
                     </a>
                 </h1>
+
+                <div id="top-menu">
+                    <ul class="navbar-nav">
+                        <li>
+                            <a href="http://cs.kumoh.ac.kr/cs/sub0101.do" title="학과소개" class="active">학과소개</a>
+                            <div class="depth2" >
+                                <div class="row">
+                                    <div class="col-12 col-lg-3 depth2-inner">
+                                        <ul>
+                                            <li>
+                                                <a href="http://cs.kumoh.ac.kr/cs/sub0101.do" title="학과소개" class="active">학과소개</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-12 col-lg-3 depth2-inner">
+                                        <ul>
+                                            <li>
+                                                <a href="http://cs.kumoh.ac.kr/cs/sub0102.do" title="교육목표" class="active">교육목표</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-12 col-lg-3 depth2-inner">
+                                        <ul>
+                                            <li>
+                                                <a href="http://cs.kumoh.ac.kr/cs/sub0103.do" title="주요성과" class="active">주요성과</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-12 col-lg-3 depth2-inner">
+                                        <ul>
+                                            <li>
+                                                <a href="http://cs.kumoh.ac.kr/cs/sub0104.do" title="졸업 후 진로" class="active">졸업 후 진로</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="http://cs.kumoh.ac.kr/cs/sub0201.do" title="공학교육인증" class="active">공학교육인증</a>
+                            <div class="depth2" >
+                                <div class="row">
+                                    <div class="col-12 col-lg-3 depth2-inner">
+                                        <ul>
+                                            <li>
+                                                <a href="http://cs.kumoh.ac.kr/cs/sub0201.do" title="공학교육인증제도 소개" class="active">공학교육인증제도 소개</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-12 col-lg-3 depth2-inner">
+                                        <ul>
+                                            <li>
+                                                <a href="http://cs.kumoh.ac.kr/cs/sub0202.do" title="프로그램 교육목표" class="active">프로그램 교육목표</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-12 col-lg-3 depth2-inner">
+                                        <ul>
+                                            <li>
+                                                <a href="http://cs.kumoh.ac.kr/cs/sub0203.do" title="프로그램 학습성과" class="active">프로그램 학습성과</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-12 col-lg-3 depth2-inner">
+                                        <ul>
+                                            <li>
+                                                <a href="http://cs.kumoh.ac.kr/cs/sub0204.do" title="교과과정" class="active">교과과정</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-12 col-lg-3 depth2-inner">
+                                        <ul>
+                                            <li>
+                                                <a href="http://cs.kumoh.ac.kr/cs/sub0205.do" title="인증졸업기준" class="active">인증졸업기준</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="http://cs.kumoh.ac.kr/cs/sub0301.do" title="대학원" class="active">대학원</a>
+                            <div class="depth2" >
+                                <div class="row">
+                                    <div class="col-12 col-lg-3 depth2-inner">
+                                        <ul>
+                                            <li>
+                                                <a href="http://cs.kumoh.ac.kr/cs/sub0301.do" title="일반대학원(소프트웨어공학과)" class="active">일반대학원(소프트웨어공학과)</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-12 col-lg-3 depth2-inner">
+                                        <ul>
+                                            <li>
+                                                <a href="http://cs.kumoh.ac.kr/cs/sub0302.do" title="산업대학원(컴퓨터IT공학과)" class="active">산업대학원(컴퓨터IT공학과)</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="http://cs.kumoh.ac.kr/cs/sub0401.do" title="구성원" class="active">구성원</a>
+                            <div class="depth2" >
+                                <div class="row">
+                                    <div class="col-12 col-lg-3 depth2-inner">
+                                        <ul>
+                                            <li>
+                                                <a href="http://cs.kumoh.ac.kr/cs/sub0401.do" title="교수" class="active">교수</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-12 col-lg-3 depth2-inner">
+                                        <ul>
+                                            <li>
+                                                <a href="http://cs.kumoh.ac.kr/cs/sub0402.do" title="조교" class="active">조교</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="http://cs.kumoh.ac.kr/cs/sub0503.do" title="학생활동" class="active">학생활동</a>
+                            <div class="depth2" >
+                                <div class="row">
+                                    <div class="col-12 col-lg-3 depth2-inner">
+                                        <ul>
+                                            <li>
+                                                <a href="http://cs.kumoh.ac.kr/cs/sub0503.do" title="학생회" class="active">학생회</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-12 col-lg-3 depth2-inner">
+                                        <ul>
+                                            <li>
+                                                <a href="http://cs.kumoh.ac.kr/cs/sub0504.do" title="동아리" class="active">동아리</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="http://cs.kumoh.ac.kr/cs/sub0601.do" title="커뮤니티" class="active">커뮤니티</a>
+                            <div class="depth2" >
+                                <div class="row">
+                                    <div class="col-12 col-lg-3 depth2-inner">
+                                        <ul>
+                                            <li>
+                                                <a href="http://cs.kumoh.ac.kr/cs/sub0601.do" title="포토갤러리" class="active">포토갤러리</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-12 col-lg-3 depth2-inner">
+                                        <ul>
+                                            <li>
+                                                <a href="http://cs.kumoh.ac.kr/cs/sub0602.do" title="수상실적" class="active">수상실적</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
