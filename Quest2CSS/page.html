@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>컴퓨터소프트웨어공학과 | 학과소개 | 학과소개</title>
+
+    <style>
+        .header{
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            z-index: 100;
+        }
+        .gnb{
+            display: block;
+            height: 2.375rem;
+        }
+        .container{
+            max-width: 1240px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .header-util{
+            padding-top: 0.875rem;
+        }
+
+        .sub-visual-wrapper{
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin-left: -960px;
+            display: block;
+            width: 1920px;
+            height: 370px;
+        }
+
+
+        .float-right{
+            float: right !important;
+            list-style:none;
+            margin:0 auto;
+            padding:0;
+        }
+        .float-right > li{
+            margin-left: 10px;
+            padding: 0 0 0 0;
+            border : 0;
+            float: left;
+        }
+        .float-right > li > a{
+            text-decoration: none;
+            color: white;
+            font-size: 11px;
+        }
+        .float-right > li > a:hover{
+            text-decoration: underline;
+            color: white;
+        }
+        .float-right > li:after{
+            margin-left: 10px;
+            font-size: 9px;
+            content: "|";
+            color: white;
+        }
+        .float-right > li:last-child:after{
+            content: "";
+        }
+
+        .navbar{
+            position: absolute;
+            top: 2.375rem;
+            left: 0;
+            padding: 0;
+            display: block;
+            height: 6.375rem;
+            width: 100%;
+            background-color: #ff8d3f;
+        }
+
+        .navbar-brand{
+            float: left;
+            margin: 0;
+            padding: 0;
+            padding-top: 2.25rem;
+            font-size: 1.25rem;
+        }
+        .navbar-brand > a{
+            display: inline-block;
+            text-decoration: none;
+        }
+        .navbar-brand > a > strong{
+            color: white;
+            display: inline-block;
+            margin-left: 1.375rem;
+            padding-left: 1.188rem;
+            font-size: 1.125rem;
+            margin-top: 0.4rem;
+        }
+        .navbar-brand > a > strong:before{
+            color: white;
+            margin-right: 10px;
+            content: "|";
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="gnb">
+            <div class="container">
+                <div class="header-util">
+                    <ul class="float-right">
+                        <li><a href="http://cs.kumoh.ac.kr/cs/index.do">홈</a></li>
+                        <li><a href="http://cs.kumoh.ac.kr/_common/login/login.do">로그인</a></li>
+                        <li><a href="http://www.kumoh.ac.kr/ko/index.do">대학메인</a></li>
+                        <li><a href="http://iphak.kumoh.ac.kr/ipsi/index.do">입학안내</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="navbar">
+            <div class="container">
+                <h1 class="navbar-brand">
+                    <a href="http://cs.kumoh.ac.kr/cs/index.do">
+                        <img src="source/logo.png" alt="kit금오공과대학교 (Kumoh National Institute of Technology)" width="170px" height="auto" align="left" >
+                        <strong>컴퓨터소프트웨어공학과</strong>
+                    </a>
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="sub-top">
+        <div class="sub-visual-wrapper">
+            <img alt="학과소개" src="source/top.jpg">
+        </div>
+    </div>
+</body>
