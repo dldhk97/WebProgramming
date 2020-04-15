@@ -266,7 +266,7 @@
         .location{
             display:inline-block;
             vertical-align: middle;
-            height: 3.75rem;
+            /* height: 3.75rem; */
             line-height: 3.75rem;
             color: white;
             font-size: 1rem;
@@ -541,7 +541,9 @@
             background-color: white;
             padding: 2.188rem 0;
             border-top: 0;
-            display: none; /* debug 컨텐츠 다하면 display 없애라 */
+            /* debug 컨텐츠 다하면 display 없애라 */
+            display: block; 
+            clear: both;
         }
 
         .footer-information-wrapper{
@@ -553,13 +555,71 @@
             display: block;
         }
 
-        .footer-menu > li{
-            float: left;
-            list-style-type: none;
+        .footer-menu{
+            display: block;
+            list-style-type: disc;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            padding-inline-start: 40px;
+            margin-bottom:40px;
         }
 
-        .footer-menu > li > a{
-            font-size: 16px;
+        .footer-menu > li {
+            float: left;
+            padding-right: 10px;
+            margin-right: 9px;
+            background-size: 1px 11px;
+        }
+
+        .footer-menu > li > a {
+            font-size: 0.75rem;
+            font-weight: bold;
+            line-height: 15px;
+            color: #999999;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        
+        .footer-menu > li > a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-menu > li > a.word-privacy {
+            color: #0069a5;
+        }
+
+        .footer-another-list{
+            float: right;
+        }
+
+        .footer-another-list > dl > dt > button {
+            position: relative;
+            display: block;
+            border: 1px solid #e4e4e4;
+            width: 170px;
+            height: 35px;
+            -webkit-appearance: none;
+            background: #fff;
+            text-align: left;
+            padding: 0 20px;
+            color: #999596;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+    
+
+        .footer-information-wrapper address, .footer-information-wrapper p, .footer-information-wrapper small {
+            margin-bottom: 0;
+            font:normal;
+            font-size: 0.75rem !important;
+            line-height: 1.125rem;
+            color: #616161;
+            display: inline-block;
         }
 
         
@@ -1209,10 +1269,11 @@
                             <a href="http://cs.kumoh.ac.kr/ko/sub07_04_01.do" target="_blank">개인정보처리방침</a>
                         </li>
                     </ul>
-                    <address>[39177] 경북 구미시 대학로 61 컴퓨터소프트웨어공학과</address>
+                    <address style="font-style: normal; margin-right: 10px;">[39177] 경북 구미시 대학로 61 컴퓨터소프트웨어공학과</address>
                     <p class="tel-fax">
                         TEL : (054) 478-7540  FAX : (054) 478-7319
                     </p>
+                    <br>
                     <small>Copyright (c) 2019 Kumoh National Institute of Technology. All Rights Reserved.</small>
                 </div>
                 <div class="footer-another-list">
