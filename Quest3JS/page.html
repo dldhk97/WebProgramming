@@ -319,7 +319,7 @@
                         <span id="totalPrice">총 상품금액 0원</span>
                     </div>
                     
-                    <button class="detail-purchaseBtn" type="button">구매하기</button>
+                    <button class="detail-purchaseBtn">구매하기</button>
 
                 </fieldset>
             </form>
@@ -424,7 +424,7 @@
 
     function addElem(selectedValue, selectedText){
         var orderList = document.getElementById("orderList");
-        var newElem = document.createElement("fieldSet");
+        var newElem = document.createElement("li");
         newElem.id = newElemHeader + selectedValue;
         
         // 상품명 텍스트 추가
