@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" goodName="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
         body {
@@ -57,7 +57,7 @@
         }
 
         /* -------------------------------------컨텐츠 컨테이너------------------------------------- */
-        .contents-container{
+        .goodNames-container{
             padding-left: 150px;
             /* margin-top: 30px; */
             padding-top: 30px;
@@ -190,6 +190,15 @@
             margin-left: 30px;
         }
 
+        .orderList {
+            list-style: none;
+            padding-left: 0px;
+        }
+
+        .price{
+            text-align: right;
+        }
+
         /* ------------------------------------- 아코디언 ------------------------------------- */
         .accordion {
             background-color: #eee;
@@ -232,7 +241,7 @@
       <span class="mySidenavBtn" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
     
     <!-- 컨텐츠 -->
-    <div class="contents-container">
+    <div class="goodNames-container">
         <!-- 슬라이드쇼 -->
         <div class="slideshow-container">
 
@@ -274,7 +283,7 @@
                     <p>알프랑 그늘막 팝업 스피드 원터치 텐트</p>
 
                     <!-- 아코디언 -->
-                    <button class="accordion">판매자 정보</button>
+                    <button class="accordion" type="button">판매자 정보</button>
                     <div class="panel">
                         <ul>
                             <span>금오공과대학교</span> <br/>
@@ -283,7 +292,7 @@
                         </ul>
                     </div>
                     
-                    <button class="accordion">상품 정보</button>
+                    <button class="accordion" type="button">상품 정보</button>
                     <div class="panel">
                         <ul>
                             <span>최신 텐트</span> <br/>
@@ -292,16 +301,25 @@
                         </ul>
                     </div>
                     
-                    <button class="accordion">주문 정보</button>
+                    <!-- 주문정보 -->
+                    <button class="accordion" type="button">주문 정보</button>
                     <div class="panel">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <select id="order" onchange="changeOrderSelect()">
+                            <option value="">선택</option>
+                            <option value="A">A.스피드 원터치 팝업텐트(3~4인용)</option>
+                            <option value="B">B.5초 원터치 텐트(3인용) (+10,000원)</option>
+                            <option value="C">C.5초 원터치 텐트(5인용) (+20,000원)</option>
+                        </select>
+                        <ul id="orderList" class="orderList">
+
+                        </ul>
                     </div>
 
                     <div class="detail-totalPrice">
-                        <span>총 상품금액 0원</span>
+                        <span id="totalPrice">총 상품금액 0원</span>
                     </div>
                     
-                    <button class="detail-purchaseBtn">구매하기</button>
+                    <button class="detail-purchaseBtn" type="button">구매하기</button>
 
                 </fieldset>
             </form>
@@ -312,7 +330,13 @@
 </html>
 
 <script>
-    // 사이드바
+
+    function onLoadFunctions() {
+        resetSelected();
+    }
+    window.onload = onLoadFunctions;
+
+    // -----------------------  사이드바 ----------------------- 
     function openNav() {
       document.getElementById("mySidenav").style.width = "250px";
     }
@@ -321,7 +345,7 @@
       document.getElementById("mySidenav").style.width = "0";
     }
 
-    // 슬라이드쇼
+    // ----------------------- 슬라이드쇼 ----------------------- 
     var slideIndex = 1;
     showSlides(slideIndex);
 
@@ -349,7 +373,7 @@
     // dots[slideIndex-1].className += " active";
     }
 
-    // 아코디언 
+    // ----------------------- 아코디언 ----------------------- 
     var acc = document.getElementsByClassName("accordion");
     var i;
 
@@ -373,5 +397,135 @@
         }
     });
     }
+
+    // ----------------------- 주문정보 ----------------------- 
+
+    var newElemHeader = "newElem-";
+    function changeOrderSelect(){
+        var orderSelect = document.getElementById("order");
+        var selectedValue = orderSelect.options[orderSelect.selectedIndex].value;
+        var selectedText = orderSelect.options[orderSelect.selectedIndex].text;
+
+        // 선택 클릭했으면 아무것도 하지 않는다.
+        if(orderSelect.selectedIndex == 0){
+            return;
+        }
+
+        // 이미 추가되있으면 아무것도 하지 않는다.
+        var find = document.getElementById(newElemHeader + selectedValue);
+        if(find != null || find != undefined){
+            alert("이미 해당 항목이 존재합니다.")
+            return;
+        }
+
+        // 항목 추가
+        addElem(selectedValue, selectedText);
+    }
+
+    function addElem(selectedValue, selectedText){
+        var orderList = document.getElementById("orderList");
+        var newElem = document.createElement("fieldSet");
+        newElem.id = newElemHeader + selectedValue;
+        
+        // 상품명 텍스트 추가
+        var goodName = document.createTextNode(selectedText);
+        newElem.appendChild(goodName);
+
+        // 수량 input readonly로 추가
+        var quantityText = document.createElement("input");
+        quantityText.value = 1;
+        quantityText.readOnly = true;
+        newElem.appendChild(quantityText);
+
+        // 가격 input readonly로 생성
+        var price = document.createElement("input");
+        price.readOnly = true;
+        price.classList.add("price");
+        price.value = getPrice(selectedValue) + "원";
+
+        // + 버튼 추가
+        var plusBtn = document.createElement("button");
+        plusBtn.textContent = "+";
+        plusBtn.addEventListener("click", function(event){
+            var newQuantity = Number(quantityText.value) + 1;
+            quantityText.value = newQuantity;
+            price.value = getPrice(selectedValue) * newQuantity + "원";
+            event.preventDefault();                             // form 태그 안에 버튼이 있으면 버튼 기본 타입이 submit이기 때문에 페이지 자꾸 초기화됨
+            updateTotalPrice();   
+        });
+        newElem.appendChild(plusBtn);
+
+        // - 버튼 추가
+        var minusBtn = document.createElement("button");
+        minusBtn.textContent = "-";
+        minusBtn.addEventListener("click", function(event){
+            var newQuantity = Number(quantityText.value) - 1;
+            newQuantity = newQuantity > 1 ? newQuantity : 1;
+            quantityText.value = newQuantity;
+            price.value = getPrice(selectedValue) * newQuantity + "원";
+            event.preventDefault();                             // form 태그 안에 버튼이 있으면 버튼 기본 타입이 submit이기 때문에 페이지 자꾸 초기화됨
+            updateTotalPrice();   
+        });
+        newElem.appendChild(minusBtn);
+
+        // x 버튼 추가
+        var deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "x";
+        deleteBtn.stopP
+        deleteBtn.addEventListener("click", function(event){
+            newElem.remove();
+            resetSelected();
+            event.preventDefault();                             // form 태그 안에 버튼이 있으면 버튼 기본 타입이 submit이기 때문에 페이지 자꾸 초기화됨
+            updateTotalPrice();   
+        });
+        newElem.appendChild(deleteBtn);
+
+        // 가격  추가
+        newElem.appendChild(price);
+
+        // ol에 추가
+        orderList.appendChild(newElem);
+
+        updateTotalPrice();   
+    }
+
+
+    function getPrice(selectedValue){
+        switch(selectedValue){
+            case "A":
+                return 39800;
+            case "B":
+                return 49800;
+            case "C":
+                return 59800;
+            default:
+                return 0;
+        }
+    }
+
+    function getTotalPrice(){
+        var prices = document.getElementsByClassName("price");
+        var total = 0;
+        for(var i = 0 ; i < prices.length ; i++){
+            var StrPrice = String(prices[i].value).replace("원","");
+            total += Number(StrPrice);
+        }
+        return total;
+    }
+
+    // 총 상품금액 업데이트
+    function updateTotalPrice(){
+        var totalPriceText = document.getElementById("totalPrice");
+        var a = getTotalPrice();
+        console.log(a);
+        totalPriceText.innerHTML = "총 상품금액 " + a + "원";
+    }
+
+    function resetSelected(){
+        var orderSelect = document.getElementById("order");
+        orderSelect.selectedIndex = 0;      // 선택으로 초기화
+    }
+
+    
     
 </script>
